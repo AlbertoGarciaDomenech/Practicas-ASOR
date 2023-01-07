@@ -76,7 +76,6 @@ int main(int argc, char *argv[]){
                 }
                 break;
             case 'd':
-                printf("AA");
                 nwrite = strftime(buf,BUF_SIZE,"%F", localt);
                 printf("%s",buf);
                 if(sendto(sfd,buf,nwrite,0,(struct sockaddr *) &peer_addr, peer_addr_len) != nwrite){
@@ -89,7 +88,7 @@ int main(int argc, char *argv[]){
                 return 0;
                 break;
             default:
-                perror("Error, comando no reconocido\n");
+                printf("Error, comando no reconocido%s\n",buf);
                 break;
         }
     }
